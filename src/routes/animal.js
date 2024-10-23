@@ -4,7 +4,7 @@ const animalSchema = require("../models/animal");
 const verifyToken = require('./validate_token');
 
 //Nuevo animal
-router.post("/animals", verifyToken, (req, res) => {
+router.post("/animals", (req, res) => {
     const animal = animalSchema(req.body);
     animal
         .save()
